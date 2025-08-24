@@ -1,13 +1,13 @@
-### Compiling from Source
+### Compiling from Source (Recomended)
 ```bash
 git clone https://github.com/Alloy-Linux/nixos-pkgs-db-generator.git
 cd nixos-pkgs-db-generator
 nix develop -i
 gcc -o SQLGenerator main.c -lsqlite3 -lcjson
-chmod 777 SQLGenerator
+chmod +x SQLGenerator
 ./SQLGenerator
 ```
-
+Note that `nix develop -i` requires root!
 ### Running the executable
 Download the flakes
 ```bash
