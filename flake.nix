@@ -18,7 +18,7 @@
 			  pkgs.sqlite
 			  pkgs.cjson
 			  pkgs.pkg-config
-            ]
+            ];
 
             shellHook = ''
               echo "Development environment loaded"
