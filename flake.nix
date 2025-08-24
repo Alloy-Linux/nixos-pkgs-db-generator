@@ -14,10 +14,10 @@
         devShells = {
           default = pkgs.mkShell {
             packages = [
-              gcc
-							sqlite
-							cjson
-							pkg-config
+              pkgs.gcc
+			  pkgs.sqlite
+			  pkgs.cjson
+			  pkgs.pkg-config
             ]
 
             shellHook = ''
