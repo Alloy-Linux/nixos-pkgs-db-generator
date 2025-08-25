@@ -18,8 +18,8 @@ jobs:
       - name: Build dev env
         run: nix develop -i
 
-      - name: Update apt and install libcjson-dev
-        run: sudo apt update && sudo apt install libcjson-dev
+      - name: Install libcjson-dev
+        run: sudo apt install libcjson-dev
 
       - name: Compile Generator
         run: gcc -o SQLGenerator main.c -lsqlite3 -lcjson
@@ -32,6 +32,6 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: nixPackage
+          name: nixPackageDB
           path: nix_packages.db
           compression-level: 0
