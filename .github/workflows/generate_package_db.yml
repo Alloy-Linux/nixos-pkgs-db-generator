@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Install nix
-        run: sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install) --daemon --yes
+        uses: cachix/install-nix-action@v31
 
       - name: Build dev env
         run: nix develop -i
