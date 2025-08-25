@@ -27,12 +27,8 @@ jobs:
       - name: Make SQLGenerator executable
         run : chmod +x SQLGenerator
       
-      - run: ls -a
-
       - name: Run SQLGenerator
         run: ./SQLGenerator
-
-      - run: ls -a
 
       - name: Upload nixPackageDateBase as an artifact
         uses: actions/upload-artifact@v4
