@@ -17,6 +17,8 @@ jobs:
 
       - name: Build dev env
         run: nix develop -i
+      - name: Debug
+        run: ls -a
 
       - name: Compile Generator
         run: gcc -o SQLGenerator main.c -lsqlite3 -lcjson
