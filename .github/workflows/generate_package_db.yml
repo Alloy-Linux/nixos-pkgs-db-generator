@@ -19,7 +19,7 @@ jobs:
         run: nix develop -i
 
       - name: Update apt and install libcjson-dev
-        run: apt update && apt install libcjson-dev
+        run: sudo apt update && sudo apt install libcjson-dev
 
       - name: Compile Generator
         run: gcc -o SQLGenerator main.c -lsqlite3 -lcjson
