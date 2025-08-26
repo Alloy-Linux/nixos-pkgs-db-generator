@@ -16,7 +16,7 @@ jobs:
         uses: cachix/install-nix-action@v31
 
       - name: Debug nix
-        run: nix-channel --update
+        run: nix-env -qaP --json
 
       - name: Build developer enviroment
         run: nix develop -i
