@@ -1,0 +1,30 @@
+name: Generate Package DB
+
+on:
+  workflow_dispatch:
+
+jobs:
+  gendb:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Repo
+        uses: actions/checkout@v5
+
+      - name: Install nix
+        uses: cachix/install-nix-action@v31
+
+      - name: Compile nixos-pkgs-db-generator
+        run: nix build
+
+      - name: Make nixos-pkgs-db-generator executable
+        run : chmod +x ./result/bin/nixos-pkgs-db-generator
+      
+      - name: Run nixos-pkgs-db-generator
+        run: ./result/bin/nixos-pkgs-db-generator
+
+      - name: Upload nixPackageDateBase as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: nixPackageDB
+          path: nix_packages.db
+          compression-level: 0
