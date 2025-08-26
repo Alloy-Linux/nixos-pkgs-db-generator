@@ -14,6 +14,5 @@ cd path/to/flakes
 nix develop -i
 /path/to/executable
 ```
-test
 
 &copy; Copyright Alloy Linux 2025
