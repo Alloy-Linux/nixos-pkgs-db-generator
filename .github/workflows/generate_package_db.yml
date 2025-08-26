@@ -15,6 +15,9 @@ jobs:
       - name: Install nix
         uses: cachix/install-nix-action@v31
 
+      - name: Debug nix
+        run: nix-channel --update && nixos-rebuild switch
+
       - name: Build developer enviroment
         run: nix develop -i
 
