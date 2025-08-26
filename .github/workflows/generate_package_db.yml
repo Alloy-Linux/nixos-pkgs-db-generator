@@ -15,25 +15,16 @@ jobs:
       - name: Install nix
         uses: cachix/install-nix-action@v31
 
-      - name: Debug nix
-        run: 
+      - name: Compile nixos-pkgs-db-generator
+        run: nix build
 
-      - name: Build developer enviroment
-        run: nix develop -i
-
-      - name: Install libcjson-dev
-        run: sudo apt install libcjson-dev
-
-      - name: Compile SQLGenerator
-        run: gcc -o SQLGenerator main.c -lsqlite3 -lcjson
-
-      - name: Make SQLGenerator executable
-        run : chmod +x SQLGenerator
+      - name: Make nixos-pkgs-db-generator executable
+        run: sudo chmod +x ./result/bin/nixos-pkgs-db-generator
       
-      - name: Run SQLGenerator
-        run: ./SQLGenerator
+      - name: Run nixos-pkgs-db-generator
+        run: ./result/bin/nixos-pkgs-db-generator
 
-      - name: Upload nixPackageDateBase as an artifact
+      - name: Upload nix_packages.db as an artifact
         uses: actions/upload-artifact@v4
         with:
           name: nixPackageDB
