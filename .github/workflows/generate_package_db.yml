@@ -21,9 +21,6 @@ jobs:
       - name: Update nix channel
         run: nix-channel --update
 
-      - name: Debug nix
-        run: nix search nixpkgs "" --json
-
       - name: Compile nixos-pkgs-db-generator
         run: nix build
 
