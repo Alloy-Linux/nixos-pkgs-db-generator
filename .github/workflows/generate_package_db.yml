@@ -15,6 +15,9 @@ jobs:
       - name: Install nix
         uses: cachix/install-nix-action@v31
 
+      - name: Update Nix Channels
+        run: nix-channel --update
+
       - name: Test nix
         run: nix-env -qaP --json
 
