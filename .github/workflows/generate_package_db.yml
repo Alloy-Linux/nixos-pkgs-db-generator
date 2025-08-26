@@ -15,8 +15,15 @@ jobs:
       - name: Install nix
         uses: cachix/install-nix-action@v31
 
-      - name: Update Nix Channels
-        run: nix-channel --update
+      - name: List Nix Store
+        run: ls -l /nix/store
+
+      - name: Print Environment Variables
+        run: env
+
+      - name: Check Nix Configuration
+        run: cat /etc/nix/nix.conf
+
 
       - name: Test nix
         run: nix-env -qaP --json
