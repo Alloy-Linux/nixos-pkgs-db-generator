@@ -7,8 +7,7 @@ gcc -o SQLGenerator main.c -lsqlite3 -lcjson
 chmod +x SQLGenerator
 ./SQLGenerator
 ```
-Note that `nix develop -i` requires root!
-### Running the executable
+### Running the executable (Currently not working)
 Download the flakes
 ```bash
 cd path/to/flakes
