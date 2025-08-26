@@ -24,6 +24,8 @@ jobs:
       - name: Check Nix Configuration
         run: cat /etc/nix/nix.conf
 
+      - name: List Nix Channels
+        run: nix-channel --list
 
       - name: Test nix
         run: nix-env -qaP --json
