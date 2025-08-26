@@ -17,7 +17,7 @@ jobs:
         run: nix build
 
       - name: Make nixos-pkgs-db-generator executable
-        run : chmod +x ./result/bin/nixos-pkgs-db-generator
+        run : sudo chmod +x ./result/bin/nixos-pkgs-db-generator
       
       - name: Run nixos-pkgs-db-generator
         run: ./result/bin/nixos-pkgs-db-generator
