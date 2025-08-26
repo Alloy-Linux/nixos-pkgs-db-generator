@@ -1,4 +1,13 @@
-### Compiling from Source (Recomended)
+### Compiling from source using nix build (Recomended)
+```bash
+git clone https://github.com/Alloy-Linux/nixos-pkgs-db-generator.git
+cd nixos-pkgs-db-generator
+nix build
+chmod +x ./result/bin/nixos-pkgs-db-generator
+./result/bin/nixos-pkgs-db-generator
+```
+Note that `chmod +x ./result/bin/nixos-pkgs-db-generator` requires root/sudo!
+### Compiling from source using gcc
 ```bash
 git clone https://github.com/Alloy-Linux/nixos-pkgs-db-generator.git
 cd nixos-pkgs-db-generator
@@ -14,5 +23,4 @@ cd path/to/flakes
 nix develop -i
 /path/to/executable
 ```
-
 &copy; Copyright Alloy Linux 2025
