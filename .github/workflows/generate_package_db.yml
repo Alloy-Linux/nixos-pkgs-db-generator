@@ -15,6 +15,9 @@ jobs:
       - name: Install nix
         uses: cachix/install-nix-action@v31
 
+      - name: Test nix
+        run: nix-env -qaP --json
+
       - name: Compile nixos-pkgs-db-generator
         run: nix build
 
