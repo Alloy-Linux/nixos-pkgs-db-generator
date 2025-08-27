@@ -16,7 +16,7 @@ jobs:
         uses: cachix/install-nix-action@v31
 
       - name: Add nix channel
-        run: nix-channel --add https://channels.nixos.org/nixpkgs-unstable nixpkgs
+        run: nix-channel --add https://channels.nixos.org/nixpkgs-25.05-darwin nixpkgs
 
       - name: Update nix channel
         run: nix-channel --update
